@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>För Studenter - Endeljobb.se</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #4CAF50;
+            --color-secondary: #2196F3;
+            --color-accent: #FF9800;
+            --color-background: #f5f5f5;
+            --color-text: #333;
+            --color-light: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: var(--color-background);
+            color: var(--color-text);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+        header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        nav {
+            background-color: var(--color-light);
+            box-shadow: var(--shadow);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li a {
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+        }
+        .content {
+            display: flex;
+            flex: 1;
+            background-color: var(--color-light);
+        }
+        .search-and-jobs {
+            width: 30%;
+            background-color: var(--color-background);
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        .job-listings {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        .job-item {
+            background-color: var(--color-light);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        .job-item:hover {
+            transform: translateY(-3px);
+        }
+        .job-title {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        .company {
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .tree-button {
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tree-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .search-box, .dropdown {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Endeljobb.se</h1>
+            <p>För Studenter - Väx med oss</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Hem</a></li>
+                <li><a href="/forstudenter">För studenter</a></li>
+                <li><a href="/publicerajobb">Publicera lediga jobb</a></li>
+                <li><a href="/jobbamedoss">Jobba med Endeljobb</a></li>
+                <li><a href="/omoss">Om Oss</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="search-and-jobs">
+                <input type="text" placeholder="🔍 Sök studentjobb..." class="search-box">
+                <select class="dropdown">
+                    <option value="">📚 Välj jobbtyp</option>
+                    <option value="deltid">Deltid</option>
+                    <option value="examensarbete">Examensarbete</option>
+                    <option value="praktik">Praktik</option>
+                    <option value="sommarjobb">Sommarjobb</option>
+                </select>
+                <select class="dropdown">
+                    <option value="">🎓 Välj studieområde</option>
+                    <option value="it">IT & Data</option>
+                    <option value="ekonomi">Ekonomi & Finans</option>
+                    <option value="teknik">Teknik & Ingenjör</option>
+                    <option value="marknadsföring">Marknadsföring</option>
+                    <option value="medicin">Medicin & Hälsa</option>
+                </select>
+                <h3>Senaste studentjobben</h3>
+                <div id="latest-jobs">
+                    <!-- Här kommer de senaste jobben att visas dynamiskt -->
+                </div>
+            </div>
+            <div class="job-listings">
+                <h2>Välkommen Studenter!</h2>
+                <p>Här på Endeljobb.se hjälper vi dig att hitta de perfekta möjligheterna som passar din studiesituation och framtida karriärambitioner.</p>
+                
+                <h3>Vad vi erbjuder:</h3>
+                <ul>
+                    <li><strong>🕒 Deltidsjobb:</strong> Flexibla jobb som passar ditt schema och ger värdefull arbetslivserfarenhet.</li>
+                    <li><strong>📝 Examensarbeten:</strong> Spännande projekt hos företag som kan leda till framtida anställning.</li>
+                    <li><strong>🌱 Praktikplatser:</strong> Få hands-on erfarenhet inom ditt studieområde.</li>
+                    <li><strong>☀️ Sommarjobb:</strong> Utmanande uppdrag under sommarmånaderna för att bygga ditt CV.</li>
+                </ul>
+
+                <h3>Tips för jobbsökande studenter:</h3>
+                <ol>
+                    <li>Anpassa ditt CV för varje ansökan</li>
+                    <li>Framhäv relevanta kurser och projekt</li>
+                    <li>Var öppen för olika typer av erfarenheter</li>
+                    <li>Nätverka med alumner och på karriärmässor</li>
+                    <li>Håll din profil på LinkedIn och Endeljobb.se uppdaterad</li>
+                </ol>
+
+                <h3>Kommande evenemang:</h3>
+                <ul id="events">
+                    <!-- Här kommer evenemang att visas dynamiskt -->
+                </ul>
+
+                <p>Börja din sökning idag och ta första steget mot en lysande karriär. Använd sökfunktionen och filtren till vänster för att hitta de möjligheter som passar dig bäst!</p>
+                
+                <button class="tree-button" onclick="createProfile()">Skapa din profil</button>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Endeljobb.se. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+    <script>
+        // Simulera hämtning av de senaste jobben
+        function getLatestJobs() {
+            const jobs = [
+                { title: "Deltid Webbutvecklare", company: "TechStart AB", location: "Stockholm" },
+                { title: "Examensarbete: AI i Vården", company: "HealthTech Innovation", location: "Göteborg" },
+                { title: "Sommarprogram: Finansanalys", company: "Nordea", location: "Malmö" }
+            ];
+
+            const latestJobsContainer = document.getElementById('latest-jobs');
+            jobs.forEach(job => {
+                const jobElement = document.createElement('div');
+                jobElement.className = 'job-item';
+                jobElement.innerHTML = `
+                    <h3 class="job-title">${job.title}</h3>
+                    <p class="company">${job.company}</p>
+                    <p>📍 ${job.location}</p>
+                    <button class="tree-button" onclick="applyForJob('${job.title}')">Ansök Nu</button>
+                `;
+                latestJobsContainer.appendChild(jobElement);
+            });
+        }
+
+        // Simulera hämtning av kommande evenemang
+        function getUpcomingEvents() {
+            const events = [
+                "📅 15 april: Digital Karriärmässa för IT-studenter",
+                "📅 2 maj: Workshop: Så skriver du ett vinnande CV",
+                "📅 10 juni: Sommarjobbskickoff - Nätverka med arbetsgivare"
+            ];
+
+            const eventsContainer = document.getElementById('events');
+            events.forEach(event => {
+                const li = document.createElement('li');
+                li.textContent = event;
+                eventsContainer.appendChild(li);
+            });
+        }
+
+        function applyForJob(jobTitle) {
+            alert(`Du har ansökt om jobbet: ${jobTitle}`);
+        }
+
+        function createProfile() {
+            alert("Tack för ditt intresse! Funktionen för att skapa profil kommer snart.");
+        }
+
+        // Kör funktionerna när sidan laddas
+        window.onload = function() {
+            getLatestJobs();
+            getUpcomingEvents();
+        };
+    </script>
+</body>
+</html>

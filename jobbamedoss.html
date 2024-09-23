@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobba med Endeljobb.se</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #4CAF50;
+            --color-secondary: #2196F3;
+            --color-accent: #FF9800;
+            --color-background: #f5f5f5;
+            --color-text: #333;
+            --color-light: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: var(--color-background);
+            color: var(--color-text);
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+        header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        nav {
+            background-color: var(--color-light);
+            box-shadow: var(--shadow);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav ul li a {
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+        }
+        .content {
+            display: flex;
+            flex: 1;
+            background-color: var(--color-light);
+        }
+        .sidebar {
+            width: 30%;
+            background-color: var(--color-background);
+            padding: 1rem;
+            overflow-y: auto;
+        }
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        .job-item {
+            background-color: var(--color-light);
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        .job-item:hover {
+            transform: translateY(-3px);
+        }
+        .job-title {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .tree-button {
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tree-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Endeljobb.se</h1>
+            <p>Väx med oss</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Hem</a></li>
+                <li><a href="/forstudenter">För studenter</a></li>
+                <li><a href="/publicerajobb">Publicera lediga jobb</a></li>
+                <li><a href="/jobbamedoss">Jobba med Endeljobb</a></li>
+                <li><a href="/omoss">Om Oss</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="sidebar">
+                <h3>Aktuella uppdrag</h3>
+                <div class="job-item">
+                    <h4 class="job-title">🎧 Kundtjänstmedarbetare</h4>
+                    <p>Deltid/Frilans</p>
+                    <button class="tree-button" onclick="readMore('kundtjanst')">Läs mer</button>
+                </div>
+                <div class="job-item">
+                    <h4 class="job-title">📱 Digital Marknadsförare</h4>
+                    <p>Projektbaserat</p>
+                    <button class="tree-button" onclick="readMore('marknadsforing')">Läs mer</button>
+                </div>
+                <div class="job-item">
+                    <h4 class="job-title">🎨 UI/UX Designer</h4>
+                    <p>Frilans</p>
+                    <button class="tree-button" onclick="readMore('design')">Läs mer</button>
+                </div>
+            </div>
+            <div class="main-content">
+                <h2>Jobba med Endeljobb.se</h2>
+                <p>Vill du vara med och forma framtidens jobbplattform? Endeljobb.se söker drivna individer som vill bidra till vår tillväxt och hjälpa andra att hitta sina drömjobb.</p>
+                
+                <h3>Varför jobba med oss?</h3>
+                <ul>
+                    <li>🕰️ Flexibla arbetstider - Anpassa jobbet efter ditt schema</li>
+                    <li>🏠 Arbeta hemifrån - De flesta uppdrag kan utföras på distans</li>
+                    <li>📈 Värdefull erfarenhet - Få insikt i en snabbväxande startup</li>
+                    <li>🌱 Personlig utveckling - Möjlighet att växa med företaget</li>
+                    <li>💰 Konkurrenskraftig ersättning - Vi värdesätter ditt bidrag</li>
+                </ul>
+
+                <h3>Områden vi söker hjälp inom:</h3>
+                <ol>
+                    <li><strong>🎧 Kundtjänst:</strong> Svara på mail och chatt, hjälpa användare med frågor</li>
+                    <li><strong>📱 Marknadsföring:</strong> Skapa innehåll för sociala medier, SEO, digital annonsering</li>
+                    <li><strong>🎨 Design:</strong> Grafisk design, UI/UX-förbättringar för vår plattform</li>
+                    <li><strong>💼 Försäljning:</strong> Kontakta företag, sälja in våra tjänster</li>
+                    <li><strong>✍️ Innehållsskapande:</strong> Skriva blogginlägg, jobbguider och företagspresentationer</li>
+                    <li><strong>🤝 Rekryteringsassistent:</strong> Hjälpa till att matcha kandidater med jobb</li>
+                    <li><strong>💻 Teknik:</strong> Webbdesign, utveckling och databashantering</li>
+                </ol>
+
+                <h3>Hur du ansöker:</h3>
+                <p>Skicka ett mail till <a href="mailto:jobb@endeljobb.se">jobb@endeljobb.se</a> med följande information:</p>
+                <ul>
+                    <li>Vilket område du är intresserad av att arbeta inom</li>
+                    <li>Din erfarenhet och kompetenser</li>
+                    <li>Hur mycket tid du kan avsätta per vecka</li>
+                    <li>En kort beskrivning av varför du vill jobba med Endeljobb.se</li>
+                </ul>
+
+                <p>Vi ser fram emot att höra från dig och välkomna dig till vårt växande team!</p>
+                
+                <button class="tree-button" onclick="applyNow()">Skicka din ansökan</button>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Endeljobb.se. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+    <script>
+        function readMore(role) {
+            const roleDescriptions = {
+                kundtjanst: "Som kundtjänstmedarbetare hos Endeljobb.se kommer du att vara vår främsta kontakt med användare. Du kommer att hantera frågor via e-post och chatt, hjälpa användare att navigera på plattformen, och säkerställa att alla får en positiv upplevelse. Detta är en perfekt roll för dig som är serviceinriktad, har goda kommunikationsförmågor och trivs med att lösa problem.",
+                marknadsforing: "I rollen som digital marknadsförare kommer du att ansvara för att öka Endeljobb.se's synlighet online. Du kommer att skapa engagerande innehåll för sociala medier, optimera vår webbplats för sökmotorer, och planera och genomföra digitala marknadsföringskampanjer. Detta är en perfekt roll för dig som är kreativ, datadriven och har erfarenhet av digital marknadsföring.",
+                design: "Som UI/UX designer kommer du att spela en nyckelroll i att förbättra användarupplevelsen på Endeljobb.se. Du kommer att skapa användarvänliga gränssnitt, genomföra användartester, och kontinuerligt förbättra designen baserat på feedback och data. Detta är en perfekt roll för dig som har ett öga för design, förstår användarbeteende, och kan omsätta insikter till funktionella och estetiskt tilltalande lösningar."
+            };
+
+            alert(roleDescriptions[role]);
+        }
+
+        function applyNow() {
+            const subject = encodeURIComponent("Ansökan till Endeljobb.se");
+            const body = encodeURIComponent("Hej Endeljobb.se-teamet,\n\nJag är intresserad av att arbeta med er. Här är lite information om mig:\n\nOmråde jag är intresserad av:\nMin erfarenhet och kompetenser:\nTid jag kan avsätta per vecka:\nVarför jag vill jobba med Endeljobb.se:\n\nTack på förhand!\n\nMed vänliga hälsningar,\n[Ditt namn]");
+            
+            window.location.href = `mailto:jobb@endeljobb.se?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
